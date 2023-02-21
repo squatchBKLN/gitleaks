@@ -11,7 +11,7 @@ func PrivateKey() *config.Rule {
 	r := config.Rule{
 		Description: "Private Key",
 		RuleID:      "private-key",
-		Regex:       regexp.MustCompile(`(?i)-----BEGIN[ A-Z0-9_-]{0,100}PRIVATE KEY( BLOCK)?-----[\s\S-]*KEY( BLOCK)?----`),
+		Regex:       regexp.MustCompile(`(?i)-----BEGIN[ A-Z0-9_-]{0,100}PRIVATE KEY( BLOCK)?-----[\s\S-]*KEY----`),
 		Keywords:    []string{"-----BEGIN"},
 	}
 
@@ -23,9 +23,6 @@ anything
 abcdefghijklmnopqrstuvwxyz
 -----END RSA PRIVATE KEY-----
 `,
-		`-----BEGIN PRIVATE KEY BLOCK-----
-anything
------END PRIVATE KEY BLOCK-----`,
 	} // gitleaks:allow
 	return validate(r, tps, nil)
 }
