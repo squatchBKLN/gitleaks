@@ -77,7 +77,7 @@ cd gitleaks
 make build
 ```
 
-### GitHub Action
+### Github Action
 
 Check out the official [Gitleaks GitHub Action](https://github.com/gitleaks/gitleaks-action)
 
@@ -106,7 +106,7 @@ jobs:
    ```
    repos:
      - repo: https://github.com/zricethezav/gitleaks
-       rev: v8.15.3
+       rev: v8.12.0
        hooks:
          - id: gitleaks
    ```
@@ -157,7 +157,7 @@ Flags:
       --max-target-megabytes int   files larger than this will be skipped
       --no-banner                  suppress banner
       --redact                     redact secrets from logs and stdout
-  -f, --report-format string       output format (json, csv, sarif) (default "json")
+  -f, --report-format string       output format (json, csv, junit, sarif) (default "json")
   -r, --report-path string         report file
   -s, --source string              path to source (default: $PWD) (default ".")
   -v, --verbose                    show verbose output from scan
